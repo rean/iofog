@@ -33,7 +33,7 @@ public class FogContainer {
 	private String elementId = "";
 	private ElementStatus status;
 	private Tasks task;
-	private DockerUtil docker;
+	private UkdUtil docker;
 	private String MODULE_NAME = "";
 	
 	public FogContainer(String elementId) {
@@ -168,7 +168,7 @@ public class FogContainer {
 	}
 	
 	public void init() {
-		docker = DockerUtil.getInstance();
+		docker = UkdUtil.getInstance();
 		try {
 			docker.connect();
 		} catch (Exception e) {}

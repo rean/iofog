@@ -46,7 +46,7 @@ public class ProcessManager {
 	public static Boolean updated = true;
 	private Object containersMonitorLock = new Object();
 //	private Object checkTasksLock = new Object();
-	private DockerUtil docker;
+	private UkdUtil docker;
 	private ContainerManager containerManager;
 	private static ProcessManager instance;
 
@@ -271,7 +271,7 @@ public class ProcessManager {
 	 * 
 	 */
 	public void start() {
-		docker = DockerUtil.getInstance();
+		docker = UkdUtil.getInstance();
 		try {
 			docker.connect();
 		} catch (Exception e) {}
