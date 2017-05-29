@@ -58,8 +58,11 @@ public final class LoggingService {
 	public static void logInfo(String moduleName, String msg) {
 		if (Configuration.debugging)
 			System.out.println(String.format("%s : %s (%s)", moduleName, msg, new Date(System.currentTimeMillis())));
-		else
-			logger.log(Level.INFO, String.format("[%s] : %s", moduleName, msg));
+		else {
+           if (logger != null) {
+              logger.log(Level.INFO, String.format("[%s] : %s", moduleName, msg));
+           }
+        }
 	}
 
 	/**
@@ -71,8 +74,11 @@ public final class LoggingService {
 	public static void logWarning(String moduleName, String msg) {
 		if (Configuration.debugging)
 			System.out.println(String.format("%s : %s (%s)", moduleName, msg, new Date(System.currentTimeMillis())));
-		else
-			logger.log(Level.WARNING, String.format("[%s] : %s", moduleName, msg));
+		else {
+           if (logger != null) {
+              logger.log(Level.WARNING, String.format("[%s] : %s", moduleName, msg));
+           }
+        }
 	}
 
 	/**
